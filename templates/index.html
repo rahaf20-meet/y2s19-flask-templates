@@ -1,1 +1,27 @@
 <!-- Put the HTML template for your page here! -->
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+<body>
+<h1>MLOOKHIEH</h1>
+<p>Mlookhieh is the best. WHY? cuz it is!</p>
+
+<div class=list>
+{% if opposite_day == True %}
+	<p> My least fav plates are: </p>
+	<ul>
+		{% for i in food_no %}
+			<li> {{i}} </li>
+		{% endfor %}
+	</ul>
+{% else %}
+	<p> My fav plates are: </p>
+			<ul>
+				{% for i in food_fav %}
+					<li> {{i}} </li>
+				{% endfor %}
+			</ul>
+{% endif %}
+</div>
+</body>
+</html>
